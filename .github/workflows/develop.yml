@@ -10,6 +10,9 @@ jobs:
               uses: actions/checkout@v4
             # - name: Install modules
             #   uses: npm install
+            - name: Write the cypress env file
+              run: |
+                echo '${{ secrets.CYPRESS_ENV }}' > cypress.env.json                
             - name: Cypress run
               uses: cypress-io/github-action@v6
               with:
