@@ -1,8 +1,7 @@
 name: Cypress Develop
 
 on: 
-  repository_dispatch:
-    types: [trigger-workflow]
+  workflow_dispatch:    
 
 jobs:
     cypress-run:
@@ -14,7 +13,7 @@ jobs:
             #   uses: npm install
             - name: Write the cypress env file
               run: |
-                echo '${{ secrets.CYPRESS_ENV }}' > cypress.env.json                
+                echo '${{ secrets.CYPRESS_ENV }}' > cypress.env.json
             - name: Cypress run
               uses: cypress-io/github-action@v6
               with:
