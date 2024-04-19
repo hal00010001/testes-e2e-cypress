@@ -6,7 +6,6 @@
 /.awcache
 /.vscode
 *.env
-cypress.env.json
 # misc
 npm-debug.log
 
