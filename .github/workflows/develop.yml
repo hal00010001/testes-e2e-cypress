@@ -1,7 +1,11 @@
 name: Cypress Develop
 
 on: 
-  workflow_dispatch:    
+  workflow_dispatch: 
+    inputs:
+      distinct_id:
+        description: 'Distinct ID'
+        required: false
 
 jobs:
     cypress-run:
