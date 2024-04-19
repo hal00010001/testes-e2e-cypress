@@ -1,17 +1,24 @@
 name: Cypress Develop
 
-on: push
+on: 
+  workflow_dispatch: 
+    inputs:
+      distinct_id:
+        description: 'Distinct ID'
+        required: false
 
 jobs:
     cypress-run:
-        runs-on: ubuntu-22.04
+        runs-on: ubuntu-latest
         steps:
             - name: Checkout
               uses: actions/checkout@v4
             # - name: Install modules
             #   uses: npm install
+            - name: Write the cypress env file
+              run: |
+                echo '${{ secrets.CYPRESS_ENV }}' > cypress.env.json
             - name: Cypress run
               uses: cypress-io/github-action@v6
               with:
-                build: npm run build
-                start: npm start
+                command: npm run test
