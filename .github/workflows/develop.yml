@@ -1,11 +1,7 @@
 name: Cypress Develop
 
 on: 
-  workflow_dispatch: 
-    inputs:
-      distinct_id:
-        description: 'Distinct ID'
-        required: false
+  workflow_dispatch:     
 
 jobs:
     cypress-run:
@@ -22,3 +18,7 @@ jobs:
               uses: cypress-io/github-action@v6
               with:
                 command: npm run test
+
+concurrency: 
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
