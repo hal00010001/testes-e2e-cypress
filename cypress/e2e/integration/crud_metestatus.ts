@@ -16,8 +16,7 @@ describe('CRUD Method Status', () => {
     // cy.get('.max-w-\\[1536px\\] > .mt-4 > [data-testid="table"] > .table > .md\\:gap-4 > :nth-child(2) > .absolute > :nth-child(1) > .w-full > .mt-0\\.5 > .justify-end > :nth-child(1) > .p-3 > .w-6').click();
   
     // cy.get([role="${role}"])
-  
-  
+    
     // cy.get('.css-ackcql').click();
     cy.get('#react-select-2-option-1').click();
     cy.get('.border-suflex').click();
